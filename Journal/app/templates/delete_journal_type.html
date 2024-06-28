@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Journal Type{% endblock %}
+
+{% block content %}
+<main>
+    <h2>Are you sure you want to delete "{{ journal_type.title }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'index' %}">Cancel</a>
+</main>
+{% endblock %}
+

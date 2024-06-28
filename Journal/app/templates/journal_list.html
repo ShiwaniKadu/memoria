@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ journal_type.type }} Journal{% endblock %}
+
+{% block content %}
+<main>
+    <h1>{{ journal_type.type }} Journal</h1>
+    <a href="{% url 'new_journal' journal_type.id %}">New Entry</a>    <ul>
+        {% for entry in entries %}
+            <li>
+                <a href="{% url 'journal_detail' entry.id %}">{{ entry.title }}</a>
+                <a href="{% url 'edit_journal' entry.id %}">Edit</a>
+                <a href="{% url 'delete_journal' entry.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No entries found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Journal Types</a>
+</main>
+{% endblock %}

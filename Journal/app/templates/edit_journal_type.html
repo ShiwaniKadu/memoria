@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Journal Type{% endblock %}
+
+{% block content %}
+<main>
+    <h1>Edit Journal Type</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'index' %}">Cancel</a>
+</main>
+{% endblock %}
+

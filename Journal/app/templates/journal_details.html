@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ journal.title }}{% endblock %}
+
+{% block content %}
+<main>
+    <article>
+        <h2>{{ journal.title }}</h2>
+        <p>{{ journal.content }}</p>
+        <p>{{ journal.description }}</p>
+        <p>Created: {{ journal.created_at }}</p>
+    </article>
+    <a href="{% url 'edit_journal' journal.id %}">Edit Entry</a>
+    <a href="{% url 'delete_journal' journal.id %}">Delete Entry</a>
+    <a href="{% url 'journal_list' journal.journal_type.id %}">Back to {{ journal.journal_type.type }} Journal</a>
+</main>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}New Journal Type{% endblock %}
+
+{% block content %}
+<main>
+    <h2>New Journal Type</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'index' %}">Back to Journal Types</a>
+</main>
+{% endblock %}

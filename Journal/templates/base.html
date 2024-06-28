@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Journal{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Journal</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'new_journal' %}">New Journal</a>
+                    <a href="{% url 'new_journal_type' %}">New Journal Type</a>
+                    <a href="{% url 'journal_list' %}">Journal List</a>
+                    <a href="{% url 'journal_detail' %}">Journal Details</a>
+                    <a href="{% url 'edit_journal' %}">Edit Journal</a>
+                    <a href="{% url 'edit_journal_type' %}">Edit Journal Type</a>
+                    <a href="{% url 'delete_journal' %}">Delete Journal</a>
+                    <a href="{% url 'delete_journal_type' %}">Delete Journal Type</a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; {{ year }} Your Company</p>
+    </footer>
+</body>
+</html>
