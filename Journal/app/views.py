@@ -5,7 +5,10 @@ from .forms import *
 @login_required
 def index(request):
     journal_types = JournalType.objects.all()
-    return render(request, "index.html",{'journal_types':journal_types})
+    context = {
+        'journal_types': journal_types,
+    }
+    return render(request, "base.html",context)
 @login_required
 def journal_list(request, journal_type_id):
     journal_type = JournalType.objects.get(id = journal_type_id)
