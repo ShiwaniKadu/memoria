@@ -13,7 +13,7 @@
                 <li>
                     <a href="{% url 'index' %}">Home</a>
                     {% for journal_type in journal_types %}
-                        <a href="{% url 'new_journal' journal_type.id %}">New Journal</a>
+                        <a href="{% url 'new_journal' journal_type.id %}">New {{ journal_type.type }} Journal</a>
                     {% endfor %}
                     <a href="{% url 'new_journal_type' %}">New Journal Type</a>
                     <a href="{% url 'journal_list' %}">Journal List</a>

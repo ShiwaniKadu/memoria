@@ -3,15 +3,16 @@
 {% block title %}Journal Home{% endblock %}
 
 {% block content %}
+<main>
 <h2>Journal Types</h2>
 <ul>
     {% for journal_type in journal_types %}
-    <li>
-        <a href="{% url 'journal_list' journal_type.id %}">{{ journal_type.type }}</a>
+    <li>{{ journal_type.type }}
         <a href="{% url 'edit_journal_type' journal_type.id %}">Edit</a>
         <a href="{% url 'delete_journal_type' journal_type.id %}">Delete</a>
     </li>
     {% endfor %}
 
 </ul>
+</main>
 {% endblock %}
